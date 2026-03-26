@@ -1,0 +1,235 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: var(--font-family);
+}
+
+.login-page.login-red {
+  background: #DC2F4A; 
+}
+
+.login-page.login-green {
+  background: #3BA378; 
+}
+
+.login-close {
+  position: absolute;
+  top: 30px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-weight: 300;
+}
+
+.login-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px 40px;
+}
+
+.login-logo-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-logo-img {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 20px 30px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #8C0B25; 
+  background: #FFFFFF;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  font-family: var(--font-family);
+}
+.login-page.login-green .login-input {
+  color: #043A3B;
+}
+
+.login-input::placeholder {
+  color: rgba(140, 11, 37, 0.5);
+}
+
+.login-submit {
+  width: 200px;
+  padding: 18px;
+  background: #8C0B25; 
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-family: var(--font-family);
+}
+.login-page.login-green .login-submit {
+  background: #043A3B; 
+}
+
+.login-submit:active {
+  transform: scale(0.97);
+}
+
+.login-checkbox-wrapper {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  max-width: 320px;
+  width: 100%;
+}
+
+.custom-checkbox {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  margin-top: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.custom-checkbox.checked::after {
+  content: '✓';
+  color: #8C0B25; 
+  font-size: 16px;
+  font-weight: bold;
+}
+.login-page.login-green .custom-checkbox.checked::after {
+  color: #043A3B;
+}
+
+.login-checkbox-text {
+  font-size: 12px;
+  color: #FFFFFF;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.login-checkbox-text a {
+  color: #FFF600; 
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.login-footer {
+  font-size: 8px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* For Register page specific */
+.register-input {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #8C0B25; 
+  background: #FFFFFF;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  text-align: center;
+  font-family: var(--font-family);
+}
+.login-page.login-green .register-input {
+  color: #043A3B;
+}
+.register-input::placeholder {
+  color: #8C0B25;
+}
+.login-page.login-green .register-input::placeholder {
+  color: #043A3B;
+}
+
+.register-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.register-select {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #8C0B25;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 40px;
+  appearance: none;
+  outline: none;
+  text-align: center;
+  text-align-last: center;
+  font-family: var(--font-family);
+}
+.login-page.login-green .register-select {
+  color: #043A3B;
+}
+
+.register-select-icon {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  color: #8C0B25;
+  font-size: 24px;
+  pointer-events: none;
+}
+.login-page.login-green .register-select-icon {
+  color: #043A3B;
+}
