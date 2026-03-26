@@ -5,6 +5,8 @@ import { FaTrophy } from 'react-icons/fa'
 import SpecialistBottomNav from '../components/SpecialistBottomNav'
 import './SpecialistDashboardPage.css'
 
+import user from '../assets/images/user.png'
+
 export default function SpecialistDashboardPage() {
   const [isAvailable, setIsAvailable] = useState(true)
 
@@ -13,7 +15,7 @@ export default function SpecialistDashboardPage() {
       
       {/* Header */}
       <div className="sd-header">
-        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="User" className="sd-avatar" />
+        <img src={user} alt="User" className="sd-avatar" />
         <div className="sd-user-info">
           <h2>Дизайнер, Руслан</h2>
           <p>Я {isAvailable ? 'занят / принимаю заказы' : 'не принимаю заказы'}</p>
@@ -29,14 +31,21 @@ export default function SpecialistDashboardPage() {
 
       {/* Tags Slider */}
       <div className="sd-tags-slider">
-        <div className="sd-tag red-tag" style={{ marginLeft: '-16px', paddingLeft: '32px' }}>
+        {/* <div className="sd-tag red-tag" style={{ marginLeft: '-16px', paddingLeft: '32px' }}>
           <div className="sd-tag-date">29/06</div>
-        </div>
+        </div> */}
         <div className="sd-tag green-tag">
           <div className="sd-tag-title">Логотип</div>
           <div className="sd-tag-bottom">
             <div className="sd-status-wrap"><span className="sd-dot green-dot"></span> Осталось 5 дней</div>
             <div className="sd-date-box"><IoCalendarOutline className="sd-d-icon"/> 27/06</div>
+          </div>
+        </div>
+        <div className="sd-tag lightblue-tag">
+          <div className="sd-tag-title">Брендбук</div>
+          <div className="sd-tag-bottom">
+            <div className="sd-status-wrap"><span className="sd-dot red-dot"></span> Завтра</div>
+            <div className="sd-date-box"><IoCalendarOutline className="sd-d-icon"/> 22/06</div>
           </div>
         </div>
         <div className="sd-tag lightblue-tag">

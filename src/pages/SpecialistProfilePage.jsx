@@ -6,6 +6,11 @@ import { HiOutlineUserGroup } from 'react-icons/hi'
 import SpecialistBottomNav from '../components/SpecialistBottomNav'
 import './SpecialistProfilePage.css'
 
+import user from '../assets/images/user.png'
+import portfolio1 from '../assets/images/portfolio-img1.png'
+import portfolio2 from '../assets/images/portfolio-img2.png'
+import portfolio3 from '../assets/images/portfolio-img3.png'
+
 export default function SpecialistProfilePage() {
   const navigate = useNavigate()
 
@@ -18,7 +23,7 @@ export default function SpecialistProfilePage() {
         
         <div className="sp-user-identity">
           <div className="sp-avatar-wrapper">
-            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="User" />
+            <img src={user} alt="User" />
             <div className="sp-camera-btn">
               <MdOutlinePhotoCamera />
             </div>
@@ -120,9 +125,9 @@ export default function SpecialistProfilePage() {
           <span className="sp-sec-more">ещё...</span>
         </div>
         <div className="sp-portfolio-grid">
-          <img src="https://picsum.photos/300/400?random=1" alt="P1" />
-          <img src="https://picsum.photos/300/400?random=2" alt="P2" />
-          <img src="https://picsum.photos/300/400?random=3" alt="P3" />
+          <img src={portfolio1} alt="P1" />
+          <img src={portfolio2} alt="P2" />
+          <img src={portfolio3} alt="P3" />
         </div>
       </div>
 

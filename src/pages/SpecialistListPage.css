@@ -42,6 +42,7 @@
   overflow-x: auto;
   scrollbar-width: none;
 }
+
 .sl-filters-wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -57,7 +58,7 @@
   font-weight: 500;
   color: #555;
   white-space: nowrap;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   cursor: pointer;
 }
 
@@ -79,7 +80,7 @@
   background: #FFFFFF;
   border-radius: 20px;
   padding: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   position: relative;
 }
 
@@ -96,11 +97,13 @@
   border-radius: 12px;
   object-fit: cover;
   background-color: #f0f0f0;
+  object-position: center top;
 }
 
 .sl-card-info {
   flex: 1;
-  padding-right: 20px; /* give space for absolute actions (dots, mark) */
+  padding-right: 20px;
+  /* give space for absolute actions (dots, mark) */
 }
 
 .sl-card-name-row {
@@ -159,6 +162,7 @@
   background: #39A578;
   color: #FFF;
 }
+
 .check-icon {
   font-size: 10px;
 }

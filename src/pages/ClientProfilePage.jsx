@@ -8,6 +8,8 @@ import { MdOutlinePhotoCamera } from 'react-icons/md'
 import ClientBottomNav from '../components/ClientBottomNav'
 import './ClientProfilePage.css'
 
+import user from '../assets/images/user.png'
+
 export default function ClientProfilePage() {
   const navigate = useNavigate()
 
@@ -30,7 +32,7 @@ export default function ClientProfilePage() {
 
         <div className="prof-user-info">
           <div className="prof-avatar-wrapper">
-            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="User" className="prof-avatar-img" />
+            <img src={user} alt="User" className="prof-avatar-img" />
             <div className="prof-camera-btn">
               <MdOutlinePhotoCamera />
             </div>

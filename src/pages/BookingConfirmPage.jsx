@@ -6,6 +6,8 @@ import { MdVerified } from 'react-icons/md'
 import ClientBottomNav from '../components/ClientBottomNav'
 import './BookingConfirmPage.css'
 
+import doctor from "../assets/images/doctor.png"
+
 export default function BookingConfirmPage() {
   const navigate = useNavigate()
 
@@ -26,7 +28,7 @@ export default function BookingConfirmPage() {
         {/* Specialist Profile Sub-Card */}
         <div className="bk-specialist-card">
           <img 
-            src="https://randomuser.me/api/portraits/men/32.jpg" 
+            src={doctor} 
             alt="Doctor" 
             className="bk-specialist-img" 
           />

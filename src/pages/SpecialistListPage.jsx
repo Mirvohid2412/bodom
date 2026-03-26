@@ -6,6 +6,8 @@ import { MdVerified } from 'react-icons/md'
 import ClientBottomNav from '../components/ClientBottomNav'
 import './SpecialistListPage.css'
 
+import doctor from "../assets/images/doctor.png"
+
 export default function SpecialistListPage() {
   const navigate = useNavigate()
 
@@ -25,7 +27,7 @@ export default function SpecialistListPage() {
       ],
       location: "г. Ташкент",
       canTravel: true,
-      img: "https://randomuser.me/api/portraits/men/32.jpg"
+      img: doctor
     },
     {
       id: 2,
@@ -42,7 +44,7 @@ export default function SpecialistListPage() {
       ],
       location: "г. Ташкент",
       canTravel: true,
-      img: "https://randomuser.me/api/portraits/men/44.jpg"
+      img: doctor
     }
   ]
 

@@ -5,19 +5,27 @@ import { AiOutlineEye } from 'react-icons/ai'
 import ClientBottomNav from '../components/ClientBottomNav'
 import bannerBg from '../assets/images/banner-bg.png'
 import './HomePage.css'
+import doctor from "../assets/images/doctor.png"
+import driving_instructor from "../assets/images/driving_instructor.png"
+import beauty_masters from "../assets/images/beauty_masters.png"
+import freelancer from "../assets/images/freelancer.png"
+import accountant from "../assets/images/accountant.png"
+import plumber from "../assets/images/plumber.png"
+import psychologist from "../assets/images/psychologist.png"
+import tutor from "../assets/images/tutor.png"
 
 export default function HomePage() {
   const navigate = useNavigate()
   
   const topCategories = [
-    { title: 'Медицинские специалисты', count: '508', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=200&h=200&fit=crop' },
-    { title: 'Психологи', count: '305', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&fit=crop' },
-    { title: 'Репетиторы', count: '13 548', img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop' },
-    { title: 'Сантехники', count: '32 422', img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&h=200&fit=crop' },
-    { title: 'Бухгалтеры и юристы', count: '5698', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&h=200&fit=crop' },
-    { title: 'Фрилансеры', count: '17 896', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&h=200&fit=crop' },
-    { title: 'Мастера красоты', count: '18 548', img: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=200&h=200&fit=crop' },
-    { title: 'Автоинструкторы', count: '5426', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop' },
+    { title: 'Медицинские специалисты', count: '508', img: doctor },
+    { title: 'Психологи', count: '305', img: psychologist },
+    { title: 'Репетиторы', count: '13 548', img: tutor },
+    { title: 'Сантехники', count: '32 422', img: plumber },
+    { title: 'Бухгалтеры и юристы', count: '5698', img: accountant },
+    { title: 'Фрилансеры', count: '17 896', img: freelancer },
+    { title: 'Мастера красоты', count: '18 548', img: beauty_masters },
+    { title: 'Автоинструкторы', count: '5426', img: driving_instructor },
   ]
 
   const listCategories = [
