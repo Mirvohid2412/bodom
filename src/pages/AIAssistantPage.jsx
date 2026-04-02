@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { IoClose, IoSend } from 'react-icons/io5'
 import { FiPlus } from 'react-icons/fi'
@@ -12,6 +13,27 @@ import './AIAssistantPage.css'
 
 export default function AIAssistantPage() {
   const navigate = useNavigate()
+  const [messages, setMessages] = useState([])
+  const [inputValue, setInputValue] = useState('')
+  const scrollRef = useRef(null)
+
+  const handleSend = () => {
+    if (!inputValue.trim()) return
+    const newMessage = {
+      id: Date.now(),
+      type: 'user',
+      content: inputValue,
+      isImage: false
+    }
+    setMessages([...messages, newMessage])
+    setInputValue('')
+  }
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+    }
+  }, [messages])
 
   return (
     <div className="ai-modal-page">
@@ -45,24 +67,18 @@ export default function AIAssistantPage() {
           </div>
 
           {/* Messages Container */}
-          <div className="ai-chat-scroll-area">
+          <div className="ai-chat-scroll-area" ref={scrollRef}>
             <div className="ai-msg-group">
-              {/* Msg 1 - Right aligned (User) */}
+              {/* Static Initial Messages (Images) */}
               <div className="ai-msg-row msg-right">
                 <img src={msg1} alt="Message 1" className="ai-msg-img" />
               </div>
-
-              {/* Msg 2 - Left aligned (Bot) */}
               <div className="ai-msg-row msg-left">
                 <img src={msg2} alt="Message 2" className="ai-msg-img" />
               </div>
-
-              {/* Msg 3 - Right aligned (User) */}
               <div className="ai-msg-row msg-right">
                 <img src={msg3} alt="Message 3" className="ai-msg-img" />
               </div>
-
-              {/* Msg 4 - Left aligned (Bot) */}
               <div className="ai-msg-row msg-left">
                 <img src={msg4} alt="Message 4" className="ai-msg-img" />
               </div>
@@ -76,6 +92,17 @@ export default function AIAssistantPage() {
                   onClick={() => navigate('/specialists')} 
                 />
               </div>
+
+              {/* Dynamic New Messages (Text) */}
+              {messages.map((msg) => (
+                <div key={msg.id} className={`ai-msg-row ${msg.type === 'user' ? 'msg-right' : 'msg-left'}`}>
+                  {!msg.isImage && (
+                    <div className="ai-msg-text">
+                      {msg.content}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -85,8 +112,15 @@ export default function AIAssistantPage() {
               <FiPlus />
             </div>
             <div className="ai-footer-input-box">
-              <input type="text" placeholder="Написать запрос..." className="ai-footer-input" />
-              <div className="ai-footer-send">
+              <input 
+                type="text" 
+                placeholder="Написать запрос..." 
+                className="ai-footer-input" 
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              />
+              <div className="ai-footer-send" onClick={handleSend} style={{ cursor: 'pointer' }}>
                 <IoSend />
               </div>
             </div>

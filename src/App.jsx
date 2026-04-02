@@ -10,7 +10,6 @@ import BookingConfirmPage from './pages/BookingConfirmPage'
 import ClientProfilePage from './pages/ClientProfilePage'
 import SpecialistProfilePage from './pages/SpecialistProfilePage'
 import SpecialistDashboardPage from './pages/SpecialistDashboardPage'
-import ChatPage from './pages/ChatPage'
 
 function App() {
   return (
@@ -28,8 +27,6 @@ function App() {
         <Route path="/specialist/:id" element={<SpecialistProfilePage />} />
         <Route path="/specialist-profile" element={<SpecialistProfilePage />} />
         <Route path="/specialist-dashboard" element={<SpecialistDashboardPage />} />
-        <Route path="/chat" element={<ChatPage />} />
-        <Route path="/chat/:id" element={<ChatPage />} />
       </Routes>
     </div>
   )
