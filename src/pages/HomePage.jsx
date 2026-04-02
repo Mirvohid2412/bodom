@@ -105,14 +105,13 @@ export default function HomePage() {
           ))}
         </div>
 
-        <h3 className="home-section-title">Все 74 706 специалистов</h3>
-        
-        <div className="home-search-container">
-          <input type="text" placeholder="Поиск услуги" className="home-bottom-input" />
-          <IoSearchOutline className="home-bottom-search-icon" />
+        <div className="home-bottom-section">
+          <div className="home-search-container">
+            <input type="text" placeholder="Поиск услуги" className="home-bottom-input" />
+            <IoSearchOutline className="home-bottom-search-icon" />
+          </div>
+          <img src={homeBottomImg} alt="Home Bottom" className="home-bottom-img" />
         </div>
-
-        <img src={homeBottomImg} alt="Home Bottom" className="home-bottom-img" />
       </div>
 
       <ClientBottomNav />
