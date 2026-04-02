@@ -14,48 +14,26 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-.spec-nav-item {
+.spec-nav-item-img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  text-decoration: none;
-  color: #B2B8C0;
-  transition: all 0.2s;
-  padding: 4px 6px;
-}
-
-.spec-nav-item.active {
-  color: #FFF;
-}
-
-.spec-nav-icon-wrapper {
-  position: relative;
-}
-
-.spec-nav-icon {
-  font-size: 22px;
-}
-
-.spec-nav-badge {
-  position: absolute;
-  top: -4px;
-  right: -8px;
-  background: #E5234B;
-  color: #FFF;
-  font-size: 8px;
-  font-weight: 700;
-  min-width: 14px;
-  height: 14px;
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0 4px;
-  border: 1.5px solid #3B3C3D;
+  text-decoration: none;
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.spec-nav-label {
-  font-size: 9px;
-  font-weight: 500;
+.spec-nav-item-img:active {
+  opacity: 0.7;
+}
+
+.nav-img-item {
+  height: 38px; /* O'lchamni biroz kichraytirdik */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }

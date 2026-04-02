@@ -1,134 +1,82 @@
-import { useNavigate } from 'react-router-dom'
-import { IoMenu, IoLocationOutline } from 'react-icons/io5'
-import { MdOutlinePhotoCamera, MdVerified } from 'react-icons/md'
-import { FaCheck, FaShieldAlt } from 'react-icons/fa'
-import { HiOutlineUserGroup } from 'react-icons/hi'
 import SpecialistBottomNav from '../components/SpecialistBottomNav'
+import userInfo3Img from '../assets/images/user-info3.png'
+import scroll3Img from '../assets/images/scroll3.png'
+import scroll4Img from '../assets/images/scroll4.png'
+import profileBtnImg from '../assets/images/profile-btn.png'
+import portfolioImg1 from '../assets/images/portfolio-img1.png'
+import portfolioImg2 from '../assets/images/portfolio-img2.png'
+import portfolioImg3 from '../assets/images/portfolio-img3.png'
 import './SpecialistProfilePage.css'
 
-import user from '../assets/images/user.png'
-import portfolio1 from '../assets/images/portfolio-img1.png'
-import portfolio2 from '../assets/images/portfolio-img2.png'
-import portfolio3 from '../assets/images/portfolio-img3.png'
-
 export default function SpecialistProfilePage() {
-  const navigate = useNavigate()
-
   return (
-    <div className="sp-profile-page page-with-nav">
-      
-      {/* Header Info */}
-      <div className="sp-header">
-        <IoMenu className="sp-menu-icon" />
-        
-        <div className="sp-user-identity">
-          <div className="sp-avatar-wrapper">
-            <img src={user} alt="User" />
-            <div className="sp-camera-btn">
-              <MdOutlinePhotoCamera />
+    <div className="spec-profile-page page-with-nav">
+
+      <div className="sp-header-new">
+        <img src={userInfo3Img} alt="User Profile Info" className="sp-user-info-img" />
+      </div>
+
+      <div className="sp-scroll-outer" style={{ width: "90%", margin: "0 auto" }}>
+        <div className="sp-scroll-wrapper">
+          <img src={scroll3Img} alt="Badges Scroll" className="sp-scroll-img" />
+        </div>
+      </div>
+
+      <div className="sp-content-wrapper">
+
+        <div className="sp-section sp-about">
+          <h3 className="sp-sec-title">О себе</h3>
+          <p className="sp-sec-text">
+            Графический дизайнер, создаю логотипы, баннеры, фирменный стиль и визуал для бизнеса.
+          </p>
+        </div>
+
+        {/* Profile Button */}
+        <div className="sp-btn-container">
+          <img src={profileBtnImg} alt="Написать специалисту" className="sp-profile-btn-img" />
+        </div>
+
+        <div className="sp-divider"></div>
+
+        {/* Discount Section */}
+        <div className="sp-section sp-discount-row">
+          <div className="sp-discount-info">
+            <h3 className="sp-sec-title">Имеется скидка</h3>
+            <p className="sp-sec-text">
+              При заказы lebih dar 3х услуг, есть скидка, обсуждается индивидуально.
+            </p>
+          </div>
+          <div className="sp-discount-badge">25%</div>
+        </div>
+
+        <div className="sp-divider"></div>
+
+        {/* Services Section */}
+        <div className="sp-section">
+          <h3 className="sp-sec-title">Услуги</h3>
+          <div className="sp-scroll-outer">
+            <div className="sp-scroll-section">
+              <div className="sp-scroll-wrapper">
+                <img src={scroll4Img} alt="Services Scroll" className="sp-scroll-img-lg" />
+              </div>
             </div>
           </div>
-          <div className="sp-details">
-            <h2 className="sp-name">Руслан Лащёнов <MdVerified className="sp-verified" /></h2>
-            <p className="sp-phone">+998 90 981 23 56</p>
-            <div className="sp-location">
-              <IoLocationOutline /> Ташкент
-            </div>
-            <div className="sp-badges">
-              <div className="sp-badge blue-b">★</div>
-              <div className="sp-badge red-b">🏆</div>
-              <div className="sp-badge green-b">🏆</div>
-            </div>
+        </div>
+
+        <div className="sp-divider"></div>
+
+        {/* Portfolio Section */}
+        <div className="sp-section">
+          <div className="sp-sec-header">
+            <h3 className="sp-sec-title">Портфолио</h3>
+          </div>
+          <div className="sp-portfolio-grid">
+            <img src={portfolioImg1} alt="Portfolio 1" className="sp-portfolio-img" />
+            <img src={portfolioImg2} alt="Portfolio 2" className="sp-portfolio-img" />
+            <img src={portfolioImg3} alt="Portfolio 3" className="sp-portfolio-img" />
           </div>
         </div>
-      </div>
 
-      {/* Horizontal Badges Slider */}
-      <div className="sp-h-badges">
-        <div className="sp-h-badge">
-          <div className="sp-hb-icon green-icon"><FaShieldAlt /></div>
-          <span>Паспорт подтверждён</span>
-        </div>
-        <div className="sp-h-badge">
-          <div className="sp-hb-icon red-icon"><FaShieldAlt /></div>
-          <span>Сертификаты подтверждены</span>
-        </div>
-        <div className="sp-h-badge rating-badge">
-          <div className="sp-hb-val">★ 4,8</div>
-          <span>Рейтинг</span>
-        </div>
-        <div className="sp-h-badge bg-green">
-          <div className="sp-hb-icon white-icon"><FaCheck /></div>
-          <span>Рекомендуют</span>
-        </div>
-        <div className="sp-h-badge">
-          <div className="sp-hb-icon lightgreen-icon"><FaShieldAlt /></div>
-          <span>Даёт гарантию качества</span>
-        </div>
-         <div className="sp-h-badge">
-          <div className="sp-hb-icon blue-icon"><HiOutlineUserGroup /></div>
-          <span>Работает в команде</span>
-        </div>
-      </div>
-
-      <div className="sp-divider"></div>
-
-      {/* About Section */}
-      <div className="sp-section">
-        <h3 className="sp-sec-title">О себе</h3>
-        <p className="sp-sec-text">Графический дизайнер, создаю логотипы, баннеры, фирменный стиль и визуал для бизнеса.</p>
-        <button className="sp-red-btn">Написать специалисту</button>
-      </div>
-
-      <div className="sp-divider"></div>
-
-      {/* Discount Section */}
-      <div className="sp-section sp-discount-row">
-        <div className="sp-discount-info">
-          <h3 className="sp-sec-title">Имеется скидка</h3>
-          <p className="sp-sec-text">При заказы более 3х услуг, есть скидка, обсуждается индивидуально.</p>
-        </div>
-        <div className="sp-discount-val">25%</div>
-      </div>
-
-      <div className="sp-divider"></div>
-
-      {/* Services Slider */}
-      <div className="sp-section sp-services-sec">
-        <h3 className="sp-sec-title px-20">Услуги</h3>
-        <div className="sp-services-slider">
-          <div className="sp-srv-card srv-red">
-            <span>Разработка визитки</span>
-            <div className="sp-srv-price">◎ 500 000 UZS</div>
-          </div>
-          <div className="sp-srv-card srv-blue">
-            <span>Разработка логотипа</span>
-            <div className="sp-srv-price">◎ 2 000 000 UZS</div>
-          </div>
-          <div className="sp-srv-card srv-green">
-            <span>Разработка брендбука</span>
-            <div className="sp-srv-price">◎ 10 000 000 UZS</div>
-          </div>
-          <div className="sp-srv-card srv-grey">
-            <span>Дизайн поста</span>
-            <div className="sp-srv-price">◎ 800 000 UZS</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="sp-divider"></div>
-
-      {/* Portfolio Grid */}
-      <div className="sp-section px-20">
-        <div className="sp-sec-header">
-          <h3 className="sp-sec-title">Портфолио</h3>
-          <span className="sp-sec-more">ещё...</span>
-        </div>
-        <div className="sp-portfolio-grid">
-          <img src={portfolio1} alt="P1" />
-          <img src={portfolio2} alt="P2" />
-          <img src={portfolio3} alt="P3" />
-        </div>
       </div>
 
       <SpecialistBottomNav />

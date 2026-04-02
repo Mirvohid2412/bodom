@@ -1,128 +1,102 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { IoArrowBack, IoSend } from 'react-icons/io5'
+import { IoClose, IoSend } from 'react-icons/io5'
 import { FiPlus } from 'react-icons/fi'
-import { HiSparkles } from 'react-icons/hi2'
+import aiBgImg from '../assets/images/ai-bg.png'
+import msg1 from '../assets/images/msg1.png'
+import msg2 from '../assets/images/msg2.png'
+import msg3 from '../assets/images/msg3.png'
+import msg4 from '../assets/images/msg4.png'
+import aiIconImg from '../assets/images/ai.png'
+import aiBtnImg from '../assets/images/ai-btn.png'
 import './AIAssistantPage.css'
-
-const initialMessages = [
-  {
-    id: 1,
-    type: 'date',
-    text: 'Сегодня'
-  },
-  {
-    id: 2,
-    type: 'user',
-    text: 'Привет, у моего ребёнка опухло под глазом к кому и куда обратится?'
-  },
-  {
-    id: 3,
-    type: 'bot',
-    text: 'Здравствуйте! По Вашему описанию я бы порекомендовал обратиться сначала к педиатру, а именно к кичику с хирургической квалификацией, а после к окулисту для профилактики. В Ташкенте есть несколько специалистов, к кому Вы хотите обратиться?'
-  },
-  {
-    id: 4,
-    type: 'bot',
-    text: 'Давай сначала мы обратимся к педиатру и хирургу.'
-  },
-  {
-    id: 5,
-    type: 'bot',
-    text: 'Хорошо! Для выбора специалиста нажмите на кнопку ниже.'
-  },
-]
 
 export default function AIAssistantPage() {
   const navigate = useNavigate()
-  const [messages, setMessages] = useState(initialMessages)
-  const [input, setInput] = useState('')
-
-  const handleSend = () => {
-    if (!input.trim()) return
-    setMessages(prev => [...prev, { id: Date.now(), type: 'user', text: input }])
-    setInput('')
-    // Simulate bot response
-    setTimeout(() => {
-      setMessages(prev => [...prev, {
-        id: Date.now() + 1,
-        type: 'bot',
-        text: 'Спасибо за ваше сообщение! Я ищу подходящих специалистов для вас...'
-      }])
-    }, 1000)
-  }
 
   return (
-    <div className="ai-page page-full">
-      {/* Header */}
-      <div className="ai-header">
-        <div className="ai-header-left">
-          <button className="ai-back-btn" onClick={() => navigate(-1)}>
-            <IoArrowBack />
-          </button>
-          <div className="ai-header-info">
-            <div className="ai-header-logo">
-              <div className="ai-logo-icon">B</div>
-              <span className="ai-logo-text">Bodom помощник</span>
-            </div>
-            <span className="ai-header-subtitle">Готов помочь решить любую задачу</span>
-          </div>
-        </div>
-        <div className="ai-header-avatar">
-          <HiSparkles />
-        </div>
-      </div>
+    <div className="ai-modal-page">
+      <div className="ai-modal-overlay" onClick={() => navigate(-1)}></div>
 
-      {/* Messages */}
-      <div className="ai-messages">
-        {messages.map((msg) => {
-          if (msg.type === 'date') {
-            return (
-              <div key={msg.id} className="ai-date">
-                <span>{msg.text}</span>
+      <div className="ai-modal-container">
+        <div className="ai-modal-handle" onClick={() => navigate(-1)}></div>
+
+        <div 
+          className="ai-modal-bg" 
+          style={{ backgroundImage: `url(${aiBgImg})`, backgroundColor: '#fff' }}
+        >
+          {/* Header */}
+          <div className="ai-chat-header">
+            <div className="ai-chat-header-left">
+              <div className="ai-chat-logo-circle">
+                <span className="ai-chat-logo-b">B</span>
               </div>
-            )
-          }
-          return (
-            <div key={msg.id} className={`ai-message ${msg.type === 'user' ? 'ai-message-user' : 'ai-message-bot'}`}>
-              <p>{msg.text}</p>
+              <div className="ai-chat-header-titles">
+                <div className="ai-chat-header-main">Bodom помощник</div>
+                <div className="ai-chat-header-sub">Готов помочь решить любую задачу</div>
+              </div>
             </div>
-          )
-        })}
+            <div className="ai-chat-header-right">
+              <img src={aiIconImg} alt="AI Icon" className="ai-chat-icon-ai-img" />
+            </div>
+          </div>
 
-        {/* CTA Button */}
-        <div className="ai-cta">
-          <button className="btn btn-primary" onClick={() => navigate('/specialists')}>
-            Выбрать специалиста
-            <br />
-            <span style={{ fontSize: 11, opacity: 0.8 }}>(Педиатр и хирург)</span>
+          <div className="ai-chat-date-separator">
+            <span>Сегодня</span>
+          </div>
+
+          {/* Messages Container */}
+          <div className="ai-chat-scroll-area">
+            <div className="ai-msg-group">
+              {/* Msg 1 - Right aligned (User) */}
+              <div className="ai-msg-row msg-right">
+                <img src={msg1} alt="Message 1" className="ai-msg-img" />
+              </div>
+
+              {/* Msg 2 - Left aligned (Bot) */}
+              <div className="ai-msg-row msg-left">
+                <img src={msg2} alt="Message 2" className="ai-msg-img" />
+              </div>
+
+              {/* Msg 3 - Right aligned (User) */}
+              <div className="ai-msg-row msg-right">
+                <img src={msg3} alt="Message 3" className="ai-msg-img" />
+              </div>
+
+              {/* Msg 4 - Left aligned (Bot) */}
+              <div className="ai-msg-row msg-left">
+                <img src={msg4} alt="Message 4" className="ai-msg-img" />
+              </div>
+
+              {/* Call to Action Image Button */}
+              <div className="ai-cta-container">
+                <img 
+                  src={aiBtnImg} 
+                  alt="Select Specialist" 
+                  className="ai-cta-img-btn" 
+                  onClick={() => navigate('/specialists')} 
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Input */}
+          <div className="ai-chat-footer">
+            <div className="ai-footer-plus">
+              <FiPlus />
+            </div>
+            <div className="ai-footer-input-box">
+              <input type="text" placeholder="Написать запрос..." className="ai-footer-input" />
+              <div className="ai-footer-send">
+                <IoSend />
+              </div>
+            </div>
+          </div>
+
+          <button className="ai-modal-close" onClick={() => navigate(-1)}>
+            <IoClose />
           </button>
         </div>
       </div>
-
-      {/* Input Area */}
-      <div className="ai-input-area">
-        <button className="ai-input-add">
-          <FiPlus />
-        </button>
-        <div className="ai-input-wrapper">
-          <input
-            type="text"
-            className="ai-input"
-            placeholder="Написать запрос..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          />
-          <button className="ai-send-btn" onClick={handleSend}>
-            <IoSend />
-          </button>
-        </div>
-      </div>
-
-      <p className="ai-disclaimer">
-        Искуственный интелект от Bodom поможет только найти правильного специалиста
-      </p>
     </div>
   )
 }
