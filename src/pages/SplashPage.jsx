@@ -16,7 +16,16 @@ export default function SplashPage() {
   const location = useLocation()
   const [showStep1, setShowStep1] = useState(false)
   const [showStep2, setShowStep2] = useState(false)
+  const [showLocationModal, setShowLocationModal] = useState(false)
+  const [selectedLocation, setSelectedLocation] = useState('')
   const [loginType, setLoginType] = useState('client')
+
+  const regions = [
+    'г. Ташкент', 'Андижанская область', 'Бухарская область', 'Ферганская область',
+    'Джизакская область', 'Наманганская область', 'Навоийская область', 'Кашкадарьинская область',
+    'Самаркандская область', 'Сырдарьинская область', 'Сурхандарьинская область', 'Ташкентская область',
+    'Хорезмская область', 'Республика Каракалпакстан'
+  ]
 
   const openModal = (type) => {
     setLoginType(type)
@@ -117,7 +126,7 @@ export default function SplashPage() {
       <div className={`login-modal ${loginType === 'specialist' ? 'specialist-theme' : ''} ${showStep2 ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
         <div 
           className="login-modal-bg" 
-          style={{ 
+          style={{
             backgroundImage: `url(${loginBg2Image})`,
             transform: 'scale(1.0)'
           }}
@@ -133,8 +142,14 @@ export default function SplashPage() {
           </div>
 
           <div className="login-input-wrapper">
-            <div className="login-select-wrapper">
-              <input type="text" placeholder="Адрес" readOnly className="login-text-input" />
+            <div className="login-select-wrapper" onClick={() => setShowLocationModal(true)} style={{ cursor: 'pointer' }}>
+              <input 
+                type="text" 
+                placeholder="Адрес" 
+                readOnly 
+                className="login-text-input" 
+                value={selectedLocation}
+              />
               <div className="login-select-arrow"></div>
             </div>
           </div>
@@ -146,6 +161,32 @@ export default function SplashPage() {
             onClick={handleStep2Submit} 
             style={{ marginTop: '20px' }}
           />
+        </div>
+      </div>
+
+      {/* --- MODAL 3: Viloyatlar tanlovi (Beautiful Bottom Sheet) --- */}
+      <div className={`location-modal-overlay ${showLocationModal ? 'open' : ''}`} onClick={() => setShowLocationModal(false)}>
+        <div className="location-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="location-modal-header">
+            <h3>Выберите регион</h3>
+            <div className="location-modal-close" onClick={() => setShowLocationModal(false)}>
+              <IoClose />
+            </div>
+          </div>
+          <div className="location-list">
+            {regions.map((region, idx) => (
+              <div 
+                key={idx} 
+                className={`location-item ${selectedLocation === region ? 'active' : ''}`}
+                onClick={() => {
+                  setSelectedLocation(region)
+                  setShowLocationModal(false)
+                }}
+              >
+                {region}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

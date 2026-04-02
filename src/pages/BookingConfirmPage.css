@@ -18,13 +18,13 @@
 .bk-top-img {
   width: 70%;
   height: auto;
-  margin: 0 auto 24px;
+  margin-bottom: 24px;
   display: block;
 }
 
 .bk-card-wrapper {
   position: relative;
-  width: 92%;
+  width: 88%;
   max-width: 400px;
   height: 600px;
   margin: 0 auto;

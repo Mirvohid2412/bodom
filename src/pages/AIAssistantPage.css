@@ -188,7 +188,7 @@
   left: 0;
   right: 0;
   background-color: white;
-  padding: 16px 20px 60px; /* 32px -> 60px-ga oshirdik */
+  padding: 16px 20px 32px; /* 32px -> 60px-ga oshirdik */
   display: flex;
   align-items: center;
   gap: 12px;

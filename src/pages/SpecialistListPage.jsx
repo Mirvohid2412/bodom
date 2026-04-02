@@ -24,7 +24,7 @@ export default function SpecialistListPage() {
             src={doktorInfoBtnImg}
             alt="Book Appointment"
             className="sl-btn-img"
-          // onClick={() => navigate('/booking-confirm')}
+          onClick={() => navigate('/booking')}
           />
         </div>
 
@@ -35,7 +35,7 @@ export default function SpecialistListPage() {
             src={doktorInfoBtnImg}
             alt="Book Appointment"
             className="sl-btn-img"
-          // onClick={() => navigate('/booking-confirm')}
+          onClick={() => navigate('/booking')}
           />
         </div>
 
