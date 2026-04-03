@@ -24,6 +24,7 @@ export default function ChatModal({ isOpen, onClose }) {
   const [isInvoiceOpen, setIsInvoiceOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
+  const [invoicePrice, setInvoicePrice] = useState('');
   const scrollRef = useRef(null);
 
   const handleSend = () => {
@@ -71,19 +72,19 @@ export default function ChatModal({ isOpen, onClose }) {
 
           {/* Initial Image-based Messages */}
           <div className="chat-msg-row received-img">
-            <img src={msg1} alt="Msg1" className="chat-msg-img" />
+            <img src={msg1} alt="Msg1" className="chat-msg-img" style={{ width: '82%' }} />
           </div>
           <div className="chat-msg-row received-img">
-            <img src={msg2} alt="Msg2" className="chat-msg-img" />
+            <img src={msg2} alt="Msg2" className="chat-msg-img" style={{ width: '55%' }} />
           </div>
           <div className="chat-msg-row sent-img">
-            <img src={msg3} alt="Msg3" className="chat-msg-img" />
+            <img src={msg3} alt="Msg3" className="chat-msg-img" style={{ width: '75%' }} />
           </div>
           <div className="chat-msg-row sent-img">
-            <img src={msg4} alt="Msg4" className="chat-msg-img" />
+            <img src={msg4} alt="Msg4" className="chat-msg-img" style={{ width: '68%' }} />
           </div>
           <div className="chat-msg-row received-img">
-            <img src={msg5} alt="Msg5" className="chat-msg-img" />
+            <img src={msg5} alt="Msg5" className="chat-msg-img" style={{ width: '70%' }} />
           </div>
 
           <div className="chat-action-img">
@@ -94,7 +95,7 @@ export default function ChatModal({ isOpen, onClose }) {
           </div>
 
           <div className="chat-msg-row sent-img">
-            <img src={msg6} alt="Msg6" className="chat-msg-img" />
+            <img src={msg6} alt="Msg6" className="chat-msg-img" style={{ width: '60%' }} />
           </div>
 
           {/* Dynamic User Messages */}
@@ -164,8 +165,13 @@ export default function ChatModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="invoice-field-wrapper">
-                    <img src={select2Img} alt="Price Input" className="invoice-field-img" />
-                    {/* Placeholder content could be a real input here if needed */}
+                    <input 
+                      type="number" 
+                      className="invoice-price-input-standalone" 
+                      placeholder="Вписать произвольную цену..." 
+                      value={invoicePrice}
+                      onChange={(e) => setInvoicePrice(e.target.value)}
+                    />
                   </div>
 
                   <div className="invoice-submit-container">

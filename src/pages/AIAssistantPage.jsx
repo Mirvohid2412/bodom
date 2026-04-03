@@ -9,6 +9,7 @@ import msg3 from '../assets/images/msg3.png'
 import msg4 from '../assets/images/msg4.png'
 import aiIconImg from '../assets/images/ai.png'
 import aiBtnImg from '../assets/images/ai-btn.png'
+import logoImg from '../assets/icons/logo3.svg'
 import './AIAssistantPage.css'
 
 export default function AIAssistantPage() {
@@ -42,15 +43,15 @@ export default function AIAssistantPage() {
       <div className="ai-modal-container">
         <div className="ai-modal-handle" onClick={() => navigate(-1)}></div>
 
-        <div 
-          className="ai-modal-bg" 
+        <div
+          className="ai-modal-bg"
           style={{ backgroundImage: `url(${aiBgImg})`, backgroundColor: '#fff' }}
         >
           {/* Header */}
           <div className="ai-chat-header">
             <div className="ai-chat-header-left">
               <div className="ai-chat-logo-circle">
-                <span className="ai-chat-logo-b">B</span>
+                <img src={logoImg} alt="Bodom" className="bottom-nav-logo" style={{ width: "25px" }} />
               </div>
               <div className="ai-chat-header-titles">
                 <div className="ai-chat-header-main">Bodom помощник</div>
@@ -85,11 +86,11 @@ export default function AIAssistantPage() {
 
               {/* Call to Action Image Button */}
               <div className="ai-cta-container">
-                <img 
-                  src={aiBtnImg} 
-                  alt="Select Specialist" 
-                  className="ai-cta-img-btn" 
-                  onClick={() => navigate('/specialists')} 
+                <img
+                  src={aiBtnImg}
+                  alt="Select Specialist"
+                  className="ai-cta-img-btn"
+                  onClick={() => navigate('/specialists')}
                 />
               </div>
 
@@ -112,10 +113,10 @@ export default function AIAssistantPage() {
               <FiPlus />
             </div>
             <div className="ai-footer-input-box">
-              <input 
-                type="text" 
-                placeholder="Написать запрос..." 
-                className="ai-footer-input" 
+              <input
+                type="text"
+                placeholder="Написать запрос..."
+                className="ai-footer-input"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
