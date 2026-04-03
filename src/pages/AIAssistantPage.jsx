@@ -72,16 +72,16 @@ export default function AIAssistantPage() {
             <div className="ai-msg-group">
               {/* Static Initial Messages (Images) */}
               <div className="ai-msg-row msg-right">
-                <img src={msg1} alt="Message 1" className="ai-msg-img" />
+                <img src={msg1} alt="Message 1" className="ai-msg-img" style={{ width: '75%' }} />
               </div>
               <div className="ai-msg-row msg-left">
-                <img src={msg2} alt="Message 2" className="ai-msg-img" />
+                <img src={msg2} alt="Message 2" className="ai-msg-img" style={{ width: '90%' }} />
               </div>
               <div className="ai-msg-row msg-right">
-                <img src={msg3} alt="Message 3" className="ai-msg-img" />
+                <img src={msg3} alt="Message 3" className="ai-msg-img" style={{ width: '75%' }} />
               </div>
               <div className="ai-msg-row msg-left">
-                <img src={msg4} alt="Message 4" className="ai-msg-img" />
+                <img src={msg4} alt="Message 4" className="ai-msg-img" style={{ width: '75%' }} />
               </div>
 
               {/* Call to Action Image Button */}
